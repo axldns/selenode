@@ -1,5 +1,5 @@
 # selenode
-Docker image: ubuntu bionic, java, node, nvm, npm, chrome selenium
+Docker image: ubuntu bionic, java, node, nvm, npm, chrome, selenium
 
 Image ready to dockerize your automated browser testing with nodejs
 
