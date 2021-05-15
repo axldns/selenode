@@ -3,6 +3,8 @@ Docker image: ubuntu bionic, java, node, nvm, npm, chrome, selenium
 
 Image ready to dockerize your automated browser testing with nodejs
 
+available @ [dockerhub](https://hub.docker.com/r/axldns/selenode)
+
 ## Example usage - bundling
 
 ```
