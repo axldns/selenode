@@ -1,12 +1,13 @@
-FROM ubuntu:bionic
+FROM ubuntu:focal
 
 LABEL maintainer="axldns@gmail.com"
 
 ENV JAVA_HOME=/usr/lib/jvm/default-java
 ENV NVM_DIR="/root/.nvm"
-ARG NODE_VERSION="12.22.1"
+ARG NODE_VERSION="14.17.6"
 ENV NODE_PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin/node
 ENV PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin/:$PATH
+ENV DEBIAN_FRONTEND="noninteractive"
 
 WORKDIR /opt
 
@@ -15,7 +16,8 @@ default-jdk \
 wget \
 fonts-liberation libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libcairo2 libcups2 \
 libgbm1 libgdk-pixbuf2.0-0 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libxcomposite1 \
-libxdamage1 libxfixes3 libxkbcommon0 libxrandr2 libxshmfence1 xdg-utils
+libxdamage1 libxfixes3 libxkbcommon0 libxrandr2 libxshmfence1 xdg-utils libcurl4 \
+libcurl3-gnutls libcurl3-nss
 
 RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash \
 && \. "$NVM_DIR/nvm.sh" && nvm install "$NODE_VERSION" \
